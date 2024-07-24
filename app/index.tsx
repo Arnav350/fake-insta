@@ -1,14 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { Redirect } from "expo-router";
 
 const Index = () => {
-  return (
-    <View>
-      <Text>Index</Text>
-    </View>
-  );
+  return <Redirect href="/home" />;
 };
-
-const styles = StyleSheet.create({});
 
 export default Index;
