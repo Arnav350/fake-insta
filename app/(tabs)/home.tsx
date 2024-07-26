@@ -1,17 +1,21 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { Link } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Stories from "../../components/stories";
 
 const Home = () => {
   return (
     <SafeAreaView>
       <View style={styles.headerContainer}>
-        <Text>Instagram</Text>
+        <Image source={require("../../assets/logoName.png")} style={styles.name} />
         <View style={styles.iconsContainer}>
-          <Text>He</Text>
-          <Link href="/messages">Me</Link>
+          <Image source={require("../../assets/heartOutline.png")} style={styles.icon} />
+          <Link href="/messages">
+            <Image source={require("../../assets/messages.png")} style={styles.icon} />
+          </Link>
         </View>
       </View>
+      <Stories />
     </SafeAreaView>
   );
 };
@@ -21,10 +25,24 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
+    paddingTop: 16,
+    paddingBottom: 6,
+    paddingHorizontal: 16,
+  },
+  name: {
+    height: 35,
+    width: 130,
+    resizeMode: "contain",
   },
   iconsContainer: {
     display: "flex",
     flexDirection: "row",
+    gap: 24,
+  },
+  icon: {
+    height: 24,
+    width: 24,
   },
 });
 
