@@ -36,6 +36,9 @@ const Stories = () => {
       ListHeaderComponent={
         <View style={styles.yourContainer}>
           <Image source={{ uri: "https://picsum.photos/200" }} style={styles.image} />
+          <View style={styles.plusContainer}>
+            <Image source={require("../../assets/plus.png")} style={styles.plus} />
+          </View>
           <Text style={styles.name}>Your story</Text>
         </View>
       }
@@ -62,6 +65,20 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 12,
     color: "#777",
+  },
+  plusContainer: {
+    position: "absolute",
+    top: 54,
+    right: 2,
+    padding: 5,
+    backgroundColor: "#0095f6",
+    borderRadius: 16,
+    borderWidth: 4,
+    borderColor: "#fff",
+  },
+  plus: {
+    height: 10,
+    width: 10,
   },
 });
 
