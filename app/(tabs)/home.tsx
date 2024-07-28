@@ -62,8 +62,11 @@ const Home = () => {
           </Link>
         </View>
       </View>
-      <Stories />
-      <FlatList data={posts} renderItem={({ item, index }) => <Post key={index} post={item} />} />
+      <FlatList
+        data={posts}
+        renderItem={({ item, index }) => <Post key={index} post={item} />}
+        ListHeaderComponent={<Stories />}
+      />
     </SafeAreaView>
   );
 };
