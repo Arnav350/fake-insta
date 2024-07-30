@@ -1,13 +1,56 @@
 import { Link } from "expo-router";
-import { Image, StyleSheet, Text, TextInput, View } from "react-native";
+import { useState } from "react";
+import { FlatList, Image, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Chat from "../../components/messages/chat";
+
+type TChat = {
+  image: string;
+  name: string;
+  last: string;
+};
+
+const initChats: TChat[] = [
+  {
+    image: "https://picsum.photos/200",
+    name: "Arnav Patel",
+    last: "Active 4h ago",
+  },
+  {
+    image: "https://picsum.photos/200",
+    name: "Arnav Patel",
+    last: "Active 4h ago",
+  },
+  {
+    image: "https://picsum.photos/200",
+    name: "Arnav Patel",
+    last: "Active 4h ago",
+  },
+  {
+    image: "https://picsum.photos/200",
+    name: "Arnav Patel",
+    last: "Active 4h ago",
+  },
+  {
+    image: "https://picsum.photos/200",
+    name: "Arnav Patel",
+    last: "Active 4h ago",
+  },
+  {
+    image: "https://picsum.photos/200",
+    name: "Arnav Patel",
+    last: "Active 4h ago",
+  },
+];
 
 const Messages = () => {
+  const [chats, setChats] = useState<TChat[]>(initChats);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.topContainer}>
         <View style={styles.headingContainer}>
-          <Link href="/home">
+          <Link href="/home" style={styles.backContainer}>
             <Image source={require("../../assets/chevronLeft.png")} style={styles.icon} />
           </Link>
           <Text style={styles.username}>@arnav.patel35</Text>
@@ -23,6 +66,7 @@ const Messages = () => {
         <Text style={styles.messages}>Messages</Text>
         <Text style={styles.requests}>Requests</Text>
       </View>
+      <FlatList data={chats} renderItem={({ item, index }) => <Chat key={index} item={item} />} />
     </SafeAreaView>
   );
 };
@@ -42,10 +86,14 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    gap: 4,
+  },
+  backContainer: {
+    height: 20,
   },
   icon: {
-    height: 32,
-    width: 32,
+    height: 24,
+    width: 24,
   },
   username: {
     fontSize: 18,
@@ -71,13 +119,16 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     margin: 16,
   },
   messages: {
-    fontWeight: "600",
+    fontSize: 16,
+    fontWeight: "700",
   },
   requests: {
-    color: "777",
+    color: "#777",
+    fontWeight: "600",
   },
 });
 
