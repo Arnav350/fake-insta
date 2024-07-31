@@ -6,40 +6,54 @@ import Chat from "../../components/messages/chat";
 
 type TChat = {
   image: string;
+  username: string;
   name: string;
   last: string;
+  unread: boolean;
 };
 
 const initChats: TChat[] = [
   {
     image: "https://picsum.photos/200",
+    username: "arnav.patel35",
     name: "Arnav Patel",
-    last: "Active 4h ago",
+    last: "Active 16h ago",
+    unread: true,
   },
   {
     image: "https://picsum.photos/200",
+    username: "arnav.patel35",
     name: "Arnav Patel",
     last: "Active 4h ago",
+    unread: true,
   },
   {
     image: "https://picsum.photos/200",
+    username: "arnav.patel35",
     name: "Arnav Patel",
-    last: "Active 4h ago",
+    last: "Active 20h ago",
+    unread: false,
   },
   {
     image: "https://picsum.photos/200",
+    username: "arnav.patel35",
     name: "Arnav Patel",
     last: "Active 4h ago",
+    unread: false,
   },
   {
     image: "https://picsum.photos/200",
+    username: "arnav.patel35",
     name: "Arnav Patel",
     last: "Active 4h ago",
+    unread: false,
   },
   {
     image: "https://picsum.photos/200",
+    username: "arnav.patel35",
     name: "Arnav Patel",
     last: "Active 4h ago",
+    unread: false,
   },
 ];
 
@@ -76,14 +90,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   topContainer: {
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     padding: 16,
   },
   headingContainer: {
-    display: "flex",
     flexDirection: "row",
     alignItems: "center",
     gap: 4,
@@ -104,7 +116,6 @@ const styles = StyleSheet.create({
     width: 12,
   },
   inputContainer: {
-    display: "flex",
     flexDirection: "row",
     gap: 8,
     marginHorizontal: 16,
@@ -116,7 +127,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   subheadingsContainer: {
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",

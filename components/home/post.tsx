@@ -26,7 +26,7 @@ const Post = ({
       <View style={styles.topContainer}>
         <View style={styles.profileContainer}>
           <Image source={{ uri: profilePicture }} style={styles.profile} />
-          <View style={styles.textContainer}>
+          <View>
             <Text style={styles.username}>{username}</Text>
             {location && <Text style={styles.location}>{location}</Text>}
           </View>
@@ -90,14 +90,12 @@ const Post = ({
 
 const styles = StyleSheet.create({
   topContainer: {
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     margin: 8,
   },
   profileContainer: {
-    display: "flex",
     flexDirection: "row",
     alignItems: "center",
     gap: 8,
@@ -106,9 +104,6 @@ const styles = StyleSheet.create({
     height: 36,
     width: 36,
     borderRadius: 18,
-  },
-  textContainer: {
-    display: "flex",
   },
   username: {
     fontWeight: "600",
@@ -129,18 +124,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
   },
   rowContainer: {
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
   },
   iconsContainer: {
-    display: "flex",
     flexDirection: "row",
     gap: 16,
     marginBottom: 10,
   },
   likedBy: {
-    display: "flex",
     flexDirection: "row",
   },
   likedByOne: {
@@ -175,7 +167,6 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   commentsContainer: {
-    display: "flex",
     gap: 6,
   },
   caption: {},
@@ -183,7 +174,6 @@ const styles = StyleSheet.create({
     color: "#777",
   },
   commentContainer: {
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",

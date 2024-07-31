@@ -21,13 +21,11 @@ const Story = ({ item: { name, image } }: TProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
     alignItems: "center",
     gap: 2,
     paddingHorizontal: 6,
   },
   imageContainer: {
-    display: "flex",
     justifyContent: "center",
     alignItems: "center",
     height: 90,

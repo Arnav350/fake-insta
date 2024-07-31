@@ -50,7 +50,6 @@ const Stories = () => {
 
 const styles = StyleSheet.create({
   yourContainer: {
-    display: "flex",
     alignItems: "center",
     gap: 8,
     marginTop: 6,
