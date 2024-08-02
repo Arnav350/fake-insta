@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 12,
-    color: "#777",
+    color: "#737373",
   },
   plusContainer: {
     position: "absolute",

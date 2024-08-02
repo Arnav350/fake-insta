@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   last: {
-    color: "#777",
+    color: "#737373",
     fontSize: 14,
   },
   rightContainer: {

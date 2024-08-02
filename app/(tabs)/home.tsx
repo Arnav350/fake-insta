@@ -4,6 +4,8 @@ import { Link } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Stories from "../../components/home/stories";
 import Post from "../../components/home/post";
+import HeartOutline from "../../assets/heartOutline.svg";
+import Messages from "../../assets/messages.svg";
 
 type TPost = {
   profilePicture: string;
@@ -56,9 +58,9 @@ const Home = () => {
       <View style={styles.headerContainer}>
         <Image source={require("../../assets/logoName.png")} style={styles.name} />
         <View style={styles.iconsContainer}>
-          <Image source={require("../../assets/heartOutline.png")} style={styles.icon} />
+          <HeartOutline height={24} width={24} fill="#000" />
           <Link href="/messages">
-            <Image source={require("../../assets/messages.png")} style={styles.icon} />
+            <Messages height={24} width={24} fill="#000" />
           </Link>
         </View>
       </View>

@@ -1,5 +1,10 @@
 import { Dimensions, FlatList, Image, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import ThreeDots from "../../assets/threeDots.svg";
+import Heart from "../../assets/heart.svg";
+import HeartOutline from "../../assets/heartOutline.svg";
+import Comment from "../../assets/comment.svg";
+import Bookmark from "../../assets/bookmark.svg";
+import BookmarkOutline from "../../assets/bookmarkOutline.svg";
 
 type TProps = {
   post: {
@@ -31,7 +36,7 @@ const Post = ({
             {location && <Text style={styles.location}>{location}</Text>}
           </View>
         </View>
-        <Image source={require("../../assets/threeDots.png")} style={styles.icon} />
+        <ThreeDots height={24} width={24} fill="#000" />
       </View>
       <FlatList
         data={images}
@@ -45,17 +50,17 @@ const Post = ({
         <View style={styles.rowContainer}>
           <View style={styles.iconsContainer}>
             {liked ? (
-              <Image source={require(`../../assets/heart.png`)} style={styles.icon} />
+              <Heart height={24} width={24} fill="#ff3040" />
             ) : (
-              <Image source={require(`../../assets/heartOutline.png`)} style={styles.icon} />
+              <HeartOutline height={24} width={24} fill="#000" />
             )}
-            <Image source={require("../../assets/comment.png")} style={styles.icon} />
+            <Comment height={24} width={24} fill="#000" />
             <Image source={require("../../assets/share.png")} style={styles.icon} />
           </View>
           {saved ? (
-            <Image source={require("../../assets/bookmark.png")} style={styles.icon} />
+            <Bookmark height={24} width={24} fill="#000" />
           ) : (
-            <Image source={require("../../assets/bookmarkOutline.png")} style={styles.icon} />
+            <BookmarkOutline height={24} width={24} fill="#000" />
           )}
         </View>
         <View style={styles.likedBy}>
@@ -75,10 +80,10 @@ const Post = ({
           {comments.length !== 0 && <Text style={styles.view}>View all {comments.length} comments</Text>}
           {comments.length > 0 && (
             <View style={styles.commentContainer}>
-              <Text style={styles.comment}>
+              <Text>
                 <Text style={styles.bold}>{comments[0].username}</Text> {comments[0].content}
               </Text>
-              <Image source={require("../../assets/heartOutline.png")} style={styles.heart} />
+              <HeartOutline height={12} width={12} fill="#737373" />
             </View>
           )}
           <Text style={styles.date}>{date}</Text>
@@ -171,21 +176,16 @@ const styles = StyleSheet.create({
   },
   caption: {},
   view: {
-    color: "#777",
+    color: "#737373",
   },
   commentContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
   },
-  comment: {},
-  heart: {
-    height: 12,
-    width: 12,
-  },
   date: {
     fontSize: 12,
-    color: "#777",
+    color: "#737373",
   },
 });
 

@@ -2,7 +2,9 @@ import { Link } from "expo-router";
 import { useState } from "react";
 import { FlatList, Image, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Chevron from "../../assets/chevron.svg";
 import Chat from "../../components/messages/chat";
+import Create from "../../assets/create.svg";
 
 type TChat = {
   image: string;
@@ -65,12 +67,12 @@ const Messages = () => {
       <View style={styles.topContainer}>
         <View style={styles.headingContainer}>
           <Link href="/home" style={styles.backContainer}>
-            <Image source={require("../../assets/chevronLeft.png")} style={styles.icon} />
+            <Chevron height={24} width={24} fill="#000" style={{ transform: [{ rotate: "-90deg" }] }} />
           </Link>
           <Text style={styles.username}>@arnav.patel35</Text>
-          <Image source={require("../../assets/chevronDown.png")} style={styles.down} />
+          <Chevron height={12} width={12} fill="#737373" style={{ transform: [{ rotate: "180deg" }] }} />
         </View>
-        <Image source={require("../../assets/create.png")} style={styles.icon} />
+        <Create height={24} width={24} fill="#000" />
       </View>
       <View style={styles.inputContainer}>
         <Image source={require("../../assets/metaSearch.png")} style={styles.icon} />
@@ -111,10 +113,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "600",
   },
-  down: {
-    height: 12,
-    width: 12,
-  },
   inputContainer: {
     flexDirection: "row",
     gap: 8,
@@ -137,7 +135,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   requests: {
-    color: "#777",
+    color: "#737373",
     fontWeight: "600",
   },
 });

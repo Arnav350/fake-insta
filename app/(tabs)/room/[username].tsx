@@ -1,7 +1,9 @@
 import { FlatList, Image, StyleSheet, Text, TextInput, View } from "react-native";
-import React from "react";
-import { useLocalSearchParams } from "expo-router";
+import { Link, useLocalSearchParams } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Chevron from "../../../assets/chevron.svg";
+import Phone from "../../../assets/phone.svg";
+import Video from "../../../assets/video.svg";
 
 const Room = () => {
   const { username } = useLocalSearchParams();
@@ -15,7 +17,9 @@ const Room = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.headerContainer}>
         <View style={styles.profileContainer}>
-          <Image source={require("../../../assets/chevronLeft.png")} style={styles.icon} />
+          <Link href="/messages" style={styles.backContainer}>
+            <Chevron height={24} width={24} fill="#000" style={{ transform: [{ rotate: "-90deg" }] }} />
+          </Link>
           <Image source={{ uri: profile.image }} style={styles.image} />
           <View>
             <View style={styles.nameContainer}>
@@ -26,8 +30,8 @@ const Room = () => {
           </View>
         </View>
         <View style={styles.callsContainer}>
-          <Image style={styles.icon} />
-          <Image style={styles.icon} />
+          <Phone height={24} width={24} fill="#000" />
+          <Video height={24} width={24} fill="#000" />
         </View>
       </View>
       <FlatList data={[]} renderItem={() => <View></View>} />
@@ -62,6 +66,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 8,
   },
+  backContainer: {
+    height: 20,
+  },
   icon: {
     height: 24,
     width: 24,
@@ -85,12 +92,12 @@ const styles = StyleSheet.create({
   },
   username: {
     fontSize: 14,
-    color: "#777",
+    color: "#737373",
   },
   callsContainer: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 16,
+    gap: 20,
   },
 });
 
