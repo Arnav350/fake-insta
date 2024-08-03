@@ -4,14 +4,35 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Chevron from "../../../assets/chevron.svg";
 import Phone from "../../../assets/phone.svg";
 import Video from "../../../assets/video.svg";
+import Message from "../../../components/room/message";
+
+type TMessage = {
+  my: boolean;
+  content: string;
+};
+
+const profile = {
+  image: "https://picsum.photos/200",
+  name: "Arnav Patel",
+};
+
+const messages: TMessage[] = [
+  {
+    my: true,
+    content: "Hello",
+  },
+  {
+    my: false,
+    content: "Hello",
+  },
+  {
+    my: false,
+    content: "Hello",
+  },
+];
 
 const Room = () => {
   const { username } = useLocalSearchParams();
-
-  const profile = {
-    image: "https://picsum.photos/200",
-    name: "Arnav Patel",
-  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -34,7 +55,11 @@ const Room = () => {
           <Video height={24} width={24} fill="#000" />
         </View>
       </View>
-      <FlatList data={[]} renderItem={() => <View></View>} />
+      <FlatList
+        data={messages}
+        renderItem={({ item, index }) => <Message key={index} item={item} />}
+        contentContainerStyle={{ gap: 2 }}
+      />
       <View>
         <View>
           <Image />

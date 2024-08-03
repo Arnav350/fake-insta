@@ -4,6 +4,7 @@ import { Link } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Stories from "../../components/home/stories";
 import Post from "../../components/home/post";
+import LogoName from "../../assets/logoName.svg";
 import HeartOutline from "../../assets/heartOutline.svg";
 import Messages from "../../assets/messages.svg";
 
@@ -56,7 +57,7 @@ const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.headerContainer}>
-        <Image source={require("../../assets/logoName.png")} style={styles.name} />
+        <LogoName height={35} width={130} fill="#000" />
         <View style={styles.iconsContainer}>
           <HeartOutline height={24} width={24} fill="#000" />
           <Link href="/messages">
@@ -85,11 +86,6 @@ const styles = StyleSheet.create({
     paddingTop: 16,
     paddingBottom: 6,
     paddingHorizontal: 16,
-  },
-  name: {
-    height: 35,
-    width: 130,
-    resizeMode: "contain",
   },
   iconsContainer: {
     display: "flex",

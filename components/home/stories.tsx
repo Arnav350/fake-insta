@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FlatList, Image, StyleSheet, Text, View } from "react-native";
 import Story from "./story";
+import Plus from "../../assets/plus.svg";
 
 type TStory = {
   name: string;
@@ -37,7 +38,7 @@ const Stories = () => {
         <View style={styles.yourContainer}>
           <Image source={{ uri: "https://picsum.photos/200" }} style={styles.image} />
           <View style={styles.plusContainer}>
-            <Image source={require("../../assets/plus.png")} style={styles.plus} />
+            <Plus height={10} width={10} fill="#fff" />
           </View>
           <Text style={styles.name}>Your story</Text>
         </View>
@@ -74,10 +75,6 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     borderWidth: 4,
     borderColor: "#fff",
-  },
-  plus: {
-    height: 10,
-    width: 10,
   },
 });
 

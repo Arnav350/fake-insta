@@ -1,13 +1,13 @@
 import { StyleSheet, Text, View } from "react-native";
 
-const Create = () => {
+const New = () => {
   return (
     <View>
-      <Text>Create</Text>
+      <Text>New</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({});
 
-export default Create;
+export default New;
